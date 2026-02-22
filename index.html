@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Ahmed Talaat</title>
+
+    <!-- Premium Fonts: Outfit for Display, Inter for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Feather Icons for minimalist edge -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 1. Custom Smooth Interactive Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- 2. The Interactive Data Nexus Background -->
+    <canvas id="nexus-canvas"></canvas>
+
+    <!-- 3. Floating Glass Navigation -->
+    <header class="header">
+        <nav class="nav-container glass-panel">
+            <a href="#home" class="nav-logo hover-magnet">Ahmed.</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="hover-magnet">Home</a></li>
+                <li><a href="#expertise" class="hover-magnet">Expertise</a></li>
+                <li><a href="projects.html" class="hover-magnet">Projects</a></li>
+                <li><a href="#" onclick="alert('Resume will be available soon!'); return false;"
+                        class="hover-magnet">Resume</a></li>
+                <li><a href="#contact" class="hover-magnet">Contact</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i data-feather="menu"></i>
+            </div>
+        </nav>
+
+        <!-- Mobile Nav -->
+        <div class="mobile-menu glass-panel" id="mobile-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#" onclick="alert('Resume will be available soon!'); return false;">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content">
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-top reveal-up">
+                <div class="greeting-badge">
+                    <span class="pulse-dot"></span> Available for work
+                </div>
+                <div class="social-links glass-panel">
+                    <a href="https://github.com/a7med-Talaat" target="_blank" class="hover-magnet"><i
+                            data-feather="github"></i></a>
+                    <a href="https://linkedin.com/in/ahmed-talaat-at" target="_blank" class="hover-magnet"><i
+                            data-feather="linkedin"></i></a>
+                    <a href="mailto:ahmedtalaatsalah05@gmail.com" class="hover-magnet"><i data-feather="mail"></i></a>
+                </div>
+            </div>
+
+            <h1 class="hero-title reveal-up delay-1">
+                Hi, I'm Ahmed Talaat.<br>
+                <span class="gradient-text">Data Scientist</span>
+            </h1>
+
+            <p class="hero-subtitle reveal-up delay-2">
+                Full-Stack AI Engineer | Applied Data Scientist | Predictive Analytics Developer
+            </p>
+
+            <div class="scroll-indicator reveal-up delay-3">
+                <div class="mouse"></div>
+                <span>Scroll to explore</span>
+            </div>
+        </section>
+
+        <!-- Separate Tech Stack (Aya Nabil Style Tools) -->
+        <section id="tech-stack" class="section" style="margin-bottom: 50px;">
+            <div class="section-header reveal-up">
+                <h2>My Full Tech Stack</h2>
+                <p class="section-subtext">The tools I use to build Intelligence</p>
+            </div>
+
+            <div class="tech-marquee-wrapper reveal-up delay-1">
+                <div class="tech-marquee">
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg"
+                            alt="Python"><span>Python</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqldeveloper/sqldeveloper-plain.svg"
+                            alt="SQL"><span>SQL</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"
+                            alt="JavaScript"><span>JavaScript</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg"
+                            alt="TypeScript"><span>TypeScript</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-plain.svg"
+                            alt="Java"><span>Java</span></div>
+
+                    <!-- Frameworks & AI -->
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+                            alt="PyTorch"><span>PyTorch</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                            alt="Tensorflow"><span>TensorFlow</span></div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/keras/white"
+                            alt="Keras"><span>Keras</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"
+                            alt="Scikit-Learn"><span>Scikit-Learn</span></div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/huggingface/white"
+                            alt="Hugging Face"><span>Hugging Face</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg"
+                            alt="OpenCV"><span>OpenCV</span></div>
+
+                    <!-- Data & Big Data -->
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+                            alt="Pandas"><span>Pandas</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+                            alt="NumPy"><span>NumPy</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg"
+                            alt="Matplotlib"><span>Matplotlib</span></div>
+                    <div class="tech-item"><img src="https://seaborn.pydata.org/_static/logo-mark-lightbg.svg"
+                            alt="Seaborn"><span>Seaborn</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/plotly/plotly-original.svg"
+                            alt="Plotly"><span>Plotly</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg"
+                            alt="Spark"><span>Apache Spark</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hadoop/hadoop-original.svg"
+                            alt="Hadoop"><span>Hadoop</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+                            alt="BigQuery"><span>BigQuery</span></div>
+                    <div class="tech-item"><img src="https://www.vectorlogo.zone/logos/snowflake/snowflake-icon.svg"
+                            alt="Snowflake"><span>Snowflake</span></div>
+
+                    <!-- MLOps & DevOps -->
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg"
+                            alt="Docker"><span>Docker</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+                            alt="K8s"><span>Kubernetes</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+                            alt="AWS"><span>AWS</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-plain.svg"
+                            alt="Azure"><span>MS Azure</span></div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/githubactions/white"
+                            alt="GitHub Actions"><span>GitHub Actions</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg"
+                            alt="Jenkins"><span>Jenkins</span></div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/mlflow/white"
+                            alt="MLflow"><span>MLflow</span></div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/dvc/white" alt="DVC"><span>DVC</span>
+                    </div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/apacheairflow/white"
+                            alt="Airflow"><span>Airflow</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg"
+                            alt="Git"><span>Git</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                            alt="GitHub" class="invert-dark"><span>GitHub</span></div>
+
+                    <!-- Full Stack & Web -->
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg"
+                            alt="Node.js"><span>Node.js</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                            alt="Express.js" class="invert-dark"><span>Express.js</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-plain.svg"
+                            alt="FastAPI"><span>FastAPI</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"
+                            alt="Flask" class="invert-dark"><span>Flask</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg"
+                            alt="Vite.js"><span>Vite.js</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
+                            alt="Vercel" class="invert-dark"><span>Vercel</span></div>
+
+                    <!-- Databases -->
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-plain.svg"
+                            alt="PostgreSQL"><span>PostgreSQL</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+                            alt="MySQL"><span>MySQL</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain.svg"
+                            alt="MongoDB"><span>MongoDB</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg"
+                            alt="SQLite"><span>SQLite</span></div>
+
+                    <!-- Visual, Tools & BI -->
+                    <div class="tech-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Power_bi_logo_black.svg"
+                            class="invert-dark" alt="PowerBI"><span>PowerBI</span></div>
+                    <div class="tech-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png"
+                            alt="Tableau"><span>Tableau</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+                            alt="Figma"><span>Figma</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg"
+                            alt="Canva"><span>Canva</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg"
+                            alt="Jupyter"><span>Jupyter</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kaggle/kaggle-original.svg"
+                            alt="Kaggle"><span>Kaggle</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-plain.svg"
+                            alt="Streamlit"><span>Streamlit</span></div>
+                    <div class="tech-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg"
+                            alt="Colab"><span>Colab</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+                            alt="VS Code"><span>VS Code</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-plain.svg"
+                            alt="Postman"><span>Postman</span></div>
+
+                    <!-- Collaboration -->
+                    <div class="tech-item"><img
+                            src="https://cdn.iconscout.com/icon/free/png-256/free-notion-3628965-3030303.png"
+                            alt="Notion" class="invert-dark"><span>Notion</span></div>
+                    <div class="tech-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/1/10/2023_Obsidian_logo.svg"
+                            alt="Obsidian"><span>Obsidian</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg"
+                            alt="Slack"><span>Slack</span></div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/discord/white"
+                            alt="Discord"><span>Discord</span></div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/obsstudio/white"
+                            alt="OBS"><span>OBS</span></div>
+
+                    <!-- DUPLICATE FOR INFINITE LOOP -->
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg"
+                            alt="Python"><span>Python</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqldeveloper/sqldeveloper-plain.svg"
+                            alt="SQL"><span>SQL</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"
+                            alt="JavaScript"><span>JavaScript</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg"
+                            alt="TypeScript"><span>TypeScript</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-plain.svg"
+                            alt="Java"><span>Java</span></div>
+
+                    <!-- Frameworks & AI -->
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+                            alt="PyTorch"><span>PyTorch</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                            alt="Tensorflow"><span>TensorFlow</span></div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/keras/white"
+                            alt="Keras"><span>Keras</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"
+                            alt="Scikit-Learn"><span>Scikit-Learn</span></div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/huggingface/white"
+                            alt="Hugging Face"><span>Hugging Face</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg"
+                            alt="OpenCV"><span>OpenCV</span></div>
+
+                    <!-- Data & Big Data -->
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+                            alt="Pandas"><span>Pandas</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+                            alt="NumPy"><span>NumPy</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg"
+                            alt="Matplotlib"><span>Matplotlib</span></div>
+                    <div class="tech-item"><img src="https://seaborn.pydata.org/_static/logo-mark-lightbg.svg"
+                            alt="Seaborn"><span>Seaborn</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/plotly/plotly-original.svg"
+                            alt="Plotly"><span>Plotly</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg"
+                            alt="Spark"><span>Apache Spark</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hadoop/hadoop-original.svg"
+                            alt="Hadoop"><span>Hadoop</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+                            alt="BigQuery"><span>BigQuery</span></div>
+                    <div class="tech-item"><img src="https://www.vectorlogo.zone/logos/snowflake/snowflake-icon.svg"
+                            alt="Snowflake"><span>Snowflake</span></div>
+
+                    <!-- MLOps & DevOps -->
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg"
+                            alt="Docker"><span>Docker</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+                            alt="K8s"><span>Kubernetes</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+                            alt="AWS"><span>AWS</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-plain.svg"
+                            alt="Azure"><span>MS Azure</span></div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/githubactions/white"
+                            alt="GitHub Actions"><span>GitHub Actions</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg"
+                            alt="Jenkins"><span>Jenkins</span></div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/mlflow/white"
+                            alt="MLflow"><span>MLflow</span></div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/dvc/white" alt="DVC"><span>DVC</span>
+                    </div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/apacheairflow/white"
+                            alt="Airflow"><span>Airflow</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg"
+                            alt="Git"><span>Git</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                            alt="GitHub" class="invert-dark"><span>GitHub</span></div>
+
+                    <!-- Full Stack & Web -->
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg"
+                            alt="Node.js"><span>Node.js</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                            alt="Express.js" class="invert-dark"><span>Express.js</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-plain.svg"
+                            alt="FastAPI"><span>FastAPI</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"
+                            alt="Flask" class="invert-dark"><span>Flask</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg"
+                            alt="Vite.js"><span>Vite.js</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
+                            alt="Vercel" class="invert-dark"><span>Vercel</span></div>
+
+                    <!-- Databases -->
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-plain.svg"
+                            alt="PostgreSQL"><span>PostgreSQL</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+                            alt="MySQL"><span>MySQL</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain.svg"
+                            alt="MongoDB"><span>MongoDB</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg"
+                            alt="SQLite"><span>SQLite</span></div>
+
+                    <!-- Visual, Tools & BI -->
+                    <div class="tech-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Power_bi_logo_black.svg"
+                            class="invert-dark" alt="PowerBI"><span>PowerBI</span></div>
+                    <div class="tech-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png"
+                            alt="Tableau"><span>Tableau</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+                            alt="Figma"><span>Figma</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg"
+                            alt="Canva"><span>Canva</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg"
+                            alt="Jupyter"><span>Jupyter</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kaggle/kaggle-original.svg"
+                            alt="Kaggle"><span>Kaggle</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-plain.svg"
+                            alt="Streamlit"><span>Streamlit</span></div>
+                    <div class="tech-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg"
+                            alt="Colab"><span>Colab</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+                            alt="VS Code"><span>VS Code</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-plain.svg"
+                            alt="Postman"><span>Postman</span></div>
+
+                    <!-- Collaboration -->
+                    <div class="tech-item"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/1/10/2023_Obsidian_logo.svg"
+                            alt="Obsidian"><span>Obsidian</span></div>
+                    <div class="tech-item"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg"
+                            alt="Slack"><span>Slack</span></div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/discord/white"
+                            alt="Discord"><span>Discord</span></div>
+                    <div class="tech-item"><img src="https://cdn.simpleicons.org/obsstudio/white"
+                            alt="OBS"><span>OBS</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Arsenal / Tech Stack Challenges -->
+        <section id="expertise" class="section">
+            <div class="section-header reveal-up">
+                <h2>How I Solve Your AI Challenges</h2>
+                <p class="section-subtext">Architectural & Engineering Expertise</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <!-- AI & ML Engineering -->
+                <div class="skill-category glass-panel tilt-card reveal-up">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="icon-wrap"><i data-feather="cpu"></i></div>
+                            <h3>AI & ML Engineering</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>Architected predictive systems utilizing advanced ML algorithms like XGBoost and
+                                K-Means
+                                for real-world business applications.</li>
+                            <li>Engineered complex deep learning models using TensorFlow and PyTorch for spatial and
+                                temporal data analysis, including geospatial weather prediction.</li>
+                            <li>Integrated explainable AI (XAI) frameworks like SHAP to ensure model transparency
+                                and
+                                stakeholder trust.</li>
+                            <li>Leveraged the Hugging Face ecosystem for state-of-the-art NLP and generative AI
+                                implementations.</li>
+                            <li>Deployed robust computer vision solutions using OpenCV and scalable deployment
+                                frameworks.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Data Science & Analysis -->
+                <div class="skill-category glass-panel tilt-card reveal-up delay-1">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="icon-wrap"><i data-feather="bar-chart-2"></i></div>
+                            <h3>Data Science & Analysis</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>Transformed raw, complex datasets into actionable insights using Pandas, NumPy, and
+                                massive-scale data tools like Spark and Hadoop.</li>
+                            <li>Designed dynamic, interactive web applications and dashboards with Streamlit, Power
+                                BI,
+                                and Tableau to visualize model performance.</li>
+                            <li>Executed comprehensive exploratory data analysis (EDA) and sophisticated statistical
+                                modeling to drive strategic decision-making.</li>
+                            <li>Architected data warehouse solutions integrating PostgreSQL, BigQuery, and
+                                Snowflake.
+                            </li>
+                            <li>Performed advanced regression, clustering, and predictive time-series forecasting
+                                across
+                                diverse domains.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- DevOps & MLOps -->
+                <div class="skill-category glass-panel tilt-card reveal-up delay-2">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="icon-wrap"><i data-feather="server"></i></div>
+                            <h3>DevOps & MLOps</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>Automated robust CI/CD pipelines utilizing GitHub Actions and Jenkins to accelerate
+                                deployment cycles.</li>
+                            <li>Containerized and orchestrated AI microservices using Docker and Kubernetes to
+                                ensure
+                                high availability.</li>
+                            <li>Established rigorous model lifecycle management and version control systems using
+                                MLflow
+                                and DVC.</li>
+                            <li>Orchestrated complex, multi-stage data integration and ETL workflows with Apache
+                                Airflow.</li>
+                            <li>Successfully deployed high-performance machine learning architectures across AWS and
+                                Azure cloud infrastructures.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Built for Scale / Projects -->
+        <section id="projects" class="section">
+            <div class="section-header reveal-up">
+                <h2>My Work</h2>
+                <p class="section-subtext">Featured Projects</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <a href="https://github.com/a7med-Talaat/Churn-Prediction-Project" target="_blank"
+                    class="project-card glass-panel tilt-card reveal-up">
+                    <div class="card-glow"></div>
+                    <div class="card-content project-content">
+                        <div class="product-badge">Featured</div>
+                        <h3>E-Commerce Churn Predictor Pro</h3>
+                        <p>Enterprise-grade Machine Learning solution predicting high-value customer churn before it
+                            happens utilizing XGBoost, K-Means clustering, and SHAP explainability within an interactive
+                            Streamlit dashboard.</p>
+                        <div class="tech-tags">
+                            <span>Python</span><span>XGBoost</span><span>Streamlit</span><span>Pandas</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="view-link">View Project</span>
+                            <i data-feather="arrow-up-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 2 (NASA) -->
+                <a href="https://github.com/a7med-Talaat/CTRL-Sky-weather-prediction-system-nasaa-space-apps-challenge-solution-"
+                    target="_blank" class="project-card glass-panel tilt-card reveal-up">
+                    <div class="card-glow"></div>
+                    <div class="card-content project-content">
+                        <div class="product-badge">Space & AI</div>
+                        <h3>CTRL-Sky Weather Prediction System</h3>
+                        <p>An advanced weather prediction system utilizing Machine Learning and massive geospatial
+                            datasets to solve critical space exploration and earth observation challenges developed for
+                            the NASA Space Apps Challenge.</p>
+                        <div class="tech-tags">
+                            <span>Python</span><span>TensorFlow</span><span>Geospatial</span><span>AWS</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="view-link">View Project</span>
+                            <i data-feather="arrow-up-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="flex-center reveal-up" style="margin-top: 4rem;">
+                <a href="projects.html" class="primary-btn hover-magnet">Show more projects</a>
+            </div>
+        </section>
+
+        <!-- Let's Talk -->
+        <section id="contact" class="section flex-center reveal-up">
+            <div class="contact-card glass-panel">
+                <div class="card-glow"></div>
+                <div class="card-content contact-inner">
+                    <div class="icon-wrap-large"><i data-feather="mail"></i></div>
+                    <h2 class="contact-title">Ready to scale?</h2>
+                    <p class="contact-text">
+                        Most businesses are sitting on a goldmine of data but don't have the shovel,
+                        I build the custom AI tools that turn your raw numbers into actionable growth,
+                        Let’s turn your "what ifs" into "what’s next." DM to start the conversation.
+                    </p>
+                    <div class="contact-actions">
+                        <a href="mailto:ahmedtalaatsalah05@gmail.com" class="primary-btn hover-magnet">Start a
+                            conversation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Ahmed Talaat. Engineering intelligence.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

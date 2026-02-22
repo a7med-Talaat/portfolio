@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Ahmed Talaat | Projects</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <canvas id="nexus-canvas"></canvas>
+
+    <header class="header">
+        <nav class="nav-container glass-panel">
+            <a href="index.html" class="nav-logo hover-magnet">Ahmed.</a>
+            <ul class="nav-links">
+                <li><a href="index.html#home" class="hover-magnet">Home</a></li>
+                <li><a href="index.html#expertise" class="hover-magnet">Expertise</a></li>
+                <li><a href="projects.html" class="hover-magnet" style="color: var(--text-primary);">Projects</a></li>
+                <li><a href="#" onclick="alert('Resume will be available soon!'); return false;"
+                        class="hover-magnet">Resume</a></li>
+                <li><a href="index.html#contact" class="hover-magnet">Contact</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobile-toggle">
+                <i data-feather="menu"></i>
+            </div>
+        </nav>
+
+        <div class="mobile-menu glass-panel" id="mobile-menu">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#expertise">Expertise</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#" onclick="alert('Resume will be available soon!'); return false;">Resume</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content" style="padding-top: 200px;">
+
+        <section id="all-projects" class="section">
+            <div class="section-header reveal-up">
+                <h2>All Projects</h2>
+                <p class="section-subtext">The complete archive of my engineering work</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <a href="https://github.com/a7med-Talaat/Churn-Prediction-Project" target="_blank"
+                    class="project-card glass-panel tilt-card reveal-up">
+                    <div class="card-glow"></div>
+                    <div class="card-content project-content">
+                        <div class="product-badge">Featured</div>
+                        <h3>E-Commerce Churn Predictor Pro</h3>
+                        <p>Enterprise-grade Machine Learning solution predicting high-value customer churn before it
+                            happens utilizing XGBoost, K-Means clustering, and SHAP explainability within an interactive
+                            Streamlit dashboard.</p>
+                        <div class="tech-tags">
+                            <span>Python</span><span>XGBoost</span><span>Streamlit</span><span>Pandas</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="view-link">View Project</span>
+                            <i data-feather="arrow-up-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 2 (NASA) -->
+                <a href="https://github.com/a7med-Talaat/CTRL-Sky-weather-prediction-system-nasaa-space-apps-challenge-solution-"
+                    target="_blank" class="project-card glass-panel tilt-card reveal-up">
+                    <div class="card-glow"></div>
+                    <div class="card-content project-content">
+                        <div class="product-badge">Space & AI</div>
+                        <h3>CTRL-Sky Weather Prediction System</h3>
+                        <p>An advanced weather prediction system utilizing Machine Learning and massive geospatial
+                            datasets to solve critical space exploration and earth observation challenges developed for
+                            the NASA Space Apps Challenge.</p>
+                        <div class="tech-tags">
+                            <span>Python</span><span>TensorFlow</span><span>Geospatial</span><span>AWS</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="view-link">View Project</span>
+                            <i data-feather="arrow-up-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 3 -->
+                <a href="https://github.com/a7med-Talaat/movie-review-sentiment-analysis" target="_blank"
+                    class="project-card glass-panel tilt-card reveal-up">
+                    <div class="card-glow"></div>
+                    <div class="card-content project-content">
+                        <div class="product-badge">NLP & Deep Learning</div>
+                        <h3>Movie Review Sentiment Analysis</h3>
+                        <p>An end-to-end Natural Language Processing system engineered to classify and analyze sentiment
+                            within massive datasets of movie reviews using cutting-edge text vectorization and deep
+                            learning models.</p>
+                        <div class="tech-tags">
+                            <span>Python</span><span>NLP</span><span>Scikit-learn</span><span>NLTK</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="view-link">View Project</span>
+                            <i data-feather="arrow-up-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="flex-center reveal-up" style="margin-top: 4rem;">
+                <a href="index.html" class="primary-btn hover-magnet">Return to Home</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Ahmed Talaat. Engineering intelligence.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
