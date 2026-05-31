@@ -14,20 +14,6 @@ A premium, high-performance, and responsive single-page developer portfolio desi
 
 ---
 
-## ✨ Core Features & Micro-Animations
-
-1. **Space-Black Visual Theme**: Modern high-contrast aesthetic with neon blue (`--a1`), violet (`--a2`), and emerald green (`--a3`) accents.
-2. **Interactive Background Canvas**: A responsive node-link particle network rendered on HTML5 Canvas. Particles interact magnetically with the mouse pointer, forming connecting lines within a radius.
-3. **Hero Mouse Spotlight**: An interactive spotlight effect that follows the user's cursor across the hero header using CSS variables custom-mapped dynamically.
-4. **Hero Role Typewriter**: Cycles through various engineering titles (`Data Scientist`, `Full-Stack AI Engineer`, `Applied Data Scientist`, `Predictive Analytics Developer`) before locking on the primary title.
-5. **Seamless Tech Marquee**: A continuous, endless looped infinite marquee displaying the technical skill stack.
-6. **3D Tilt & Glow Cards**: Product cards and expertise boxes detect mouse movement to calculate tilt offsets (`rotateX` / `rotateY`) and move a glowing radial gradient overlay matching the cursor position.
-7. **Smooth Scroll Accordion**: FAQ item wrapper toggles active heights using dynamic JavaScript `scrollHeight` measurements and CSS transitions.
-8. **Contact Form & Client-Centric Placeholders**: Uses instructional placeholders (`"write your full name here"`, `"write your email here"`) to guide user input rather than generic placeholder names. Integrates form inputs directly, opening a pre-filled Gmail compose client window with a clean markdown mail layout.
-9. **Streamlined UX Scoping**: Removed unnecessary components ("MLOps Live Pipeline Monitor", "Calculate your AI savings", and "AI Pipeline Architect") to prioritize core portfolio work, direct booking, and interactive scoping.
-
----
-
 ## 🤖 Ahmed Talaat Chat Bot (V2 Architecture)
 
 The flagship feature of the portfolio is an interactive, multi-mode conversational agent designed to act as a virtual booking agent and technical scope auditor.
@@ -55,21 +41,3 @@ The flagship feature of the portfolio is an interactive, multi-mode conversation
   - *User Avatar*: Modern silhouette icon on a dark emerald gradient.
 
 ---
-
-## 🚀 Running Locally & Verification
-
-To run and verify the portfolio locally:
-
-1. **Locate Files**: The central portfolio page is located at `index.html`.
-2. **Launch Dev Server**: Run any basic HTTP server. For example:
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js (npx)
-   npx serve .
-   ```
-3. **Run JS Code Syntax Verification**:
-   ```bash
-   node scratch/validate_js.js
-   ```
