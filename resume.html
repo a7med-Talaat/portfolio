@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ahmed Talaat's Resume — Coming Soon." />
+  <title>Ahmed Talaat — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#020408;--ink:#eef2ff;--muted:#7a8599;
+      --border:rgba(255,255,255,.07);--border-hi:rgba(255,255,255,.14);
+      --a1:#4f8dff;--a2:#8b5cf6;--a3:#06d6a0;
+      --font-head:'Space Grotesk',system-ui,sans-serif;
+      --font-mono:'JetBrains Mono',monospace;
+      --ease:cubic-bezier(.16,1,.3,1);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--bg);
+      color:var(--ink);
+      font-family:var(--font-head);
+      -webkit-font-smoothing:antialiased;
+      overflow-y:auto;
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* Canvas & Grain */
+    #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+    .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+    /* Glowing orbs in background (404 Page Style) */
+    .orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.18;z-index:0}
+    .orb1{width:50vw;height:50vw;background:var(--a2);top:-15vw;left:-10vw;animation:float1 20s ease-in-out infinite alternate}
+    .orb2{width:38vw;height:38vw;background:var(--a1);bottom:-10vw;right:-8vw;animation:float2 26s ease-in-out infinite alternate}
+    .orb3{width:26vw;height:26vw;background:var(--a3);top:40%;left:50%;animation:float3 18s ease-in-out infinite alternate}
+    @keyframes float1{to{transform:translate(8vw,12vw) scale(1.1)}}
+    @keyframes float2{to{transform:translate(-8vw,-9vw) scale(1.08)}}
+    @keyframes float3{to{transform:translate(-12vw,5vw) scale(.85)}}
+
+    /* NAV */
+    .nav-wrap{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:center;pointer-events:none;padding:18px 28px}
+    nav{pointer-events:auto;width:100%;max-width:1000px;display:flex;align-items:center;justify-content:space-between;padding:10px 16px 10px 20px;background:rgba(2,4,8,.78);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid var(--border-hi);border-radius:50px;gap:12px}
+    .nav-logo{font-weight:700;font-size:17px;letter-spacing:-.4px;display:flex;align-items:center;gap:8px;flex-shrink:0}
+    .dot-live{width:8px;height:8px;border-radius:50%;background:var(--a3);box-shadow:0 0 12px var(--a3);animation:pulse-live 2.4s ease infinite}
+    @keyframes pulse-live{50%{transform:scale(1.5);opacity:.5}}
+    .nav-links{display:flex;gap:22px;align-items:center}
+    .nav-links a{font-size:13px;color:var(--muted);font-weight:500;transition:color .3s;white-space:nowrap}
+    .nav-links a:hover,.nav-links a.nav-active{color:var(--ink)}
+
+    /* Social icons in nav */
+    .nav-socials{display:flex;gap:8px;align-items:center;margin-left:4px}
+    .nav-social{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:34px;height:34px;border-radius:50%;
+      border:1px solid var(--border-hi);
+      color:var(--muted);font-size:14px;
+      transition:border-color .3s,color .3s,background .3s,transform .3s var(--ease);
+    }
+    .nav-social:hover{border-color:var(--ink);color:var(--ink);background:rgba(255,255,255,.06);transform:translateY(-2px)}
+    .nav-cta{border:1px solid var(--border-hi);padding:8px 18px;border-radius:30px;color:var(--ink)!important;font-size:13px;font-weight:600;transition:background .3s,transform .3s var(--ease)}
+    .nav-cta:hover{background:var(--ink);color:#000!important;transform:translateY(-2px)}
+    .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0;z-index:90;flex-shrink:0}
+    .burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.35s var(--ease)}
+    .burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .burger.x span:nth-child(2){opacity:0}
+    .burger.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    /* MAIN CONTENT WRAPPER */
+    .container{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      padding:140px 24px 80px;
+      max-width:700px;
+      width:100%;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    /* Terminal window (404 Page Style) */
+    .terminal{
+      width:100%;
+      background:rgba(6,12,22,.88);
+      border:1px solid var(--border-hi);
+      border-radius:18px;
+      overflow:hidden;
+      margin-bottom:40px;
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+      box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.03);
+      text-align:left;
+    }
+    .term-bar{
+      display:flex;align-items:center;gap:8px;
+      padding:12px 16px;
+      background:rgba(255,255,255,.03);
+      border-bottom:1px solid var(--border);
+    }
+    .td{width:11px;height:11px;border-radius:50%}
+    .td-r{background:#ff5f5f} .td-y{background:#ffbe2e} .td-g{background:#2cca44}
+    .term-title{flex:1;text-align:center;font-size:12px;color:var(--muted);font-family:var(--font-mono)}
+    .term-body{padding:24px 28px;text-align:left;min-height:140px}
+    .term-line{
+      font-family:var(--font-mono);
+      font-size:clamp(12px,1.4vw,14px);
+      color:var(--muted);
+      margin-bottom:8px;
+      display:flex;
+      gap:8px;
+      align-items:flex-start;
+      opacity:0;
+      animation:fadeLine .4s forwards;
+    }
+    .term-line:nth-child(1){animation-delay:.3s}
+    .term-line:nth-child(2){animation-delay:.8s}
+    .term-line:nth-child(3){animation-delay:1.3s}
+    .term-line:nth-child(4){animation-delay:1.8s}
+    .term-line:nth-child(5){animation-delay:2.3s}
+    @keyframes fadeLine{to{opacity:1}}
+    .term-prompt{color:var(--a3);flex-shrink:0}
+    .term-cmd{color:var(--ink)}
+    .term-err{color:#ff5f5f}
+    .term-warn{color:#ffbe2e}
+    .term-ok{color:var(--a3)}
+    .cursor-blink{display:inline-block;width:9px;height:1.1em;background:var(--a1);vertical-align:text-bottom;animation:blink .9s step-end infinite;margin-left:3px}
+    @keyframes blink{50%{opacity:0}}
+
+    /* Big 404 */
+    .error-num{
+      font-size:clamp(80px,18vw,180px);
+      font-weight:700;
+      letter-spacing:-.06em;
+      line-height:1;
+      margin-bottom:8px;
+      background:linear-gradient(120deg,var(--a1) 0%,var(--a2) 50%,var(--a3) 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+      filter:drop-shadow(0 0 40px rgba(79,141,255,.3));
+      animation:num-glow 3s ease-in-out infinite;
+      position:relative;
+      z-index:2;
+    }
+    @keyframes num-glow{
+      0%,100%{filter:drop-shadow(0 0 40px rgba(79,141,255,.3))}
+      50%{filter:drop-shadow(0 0 60px rgba(139,92,246,.5))}
+    }
+
+    /* Titles & Subtitle */
+    .card-title{
+      font-size:clamp(28px,5vw,44px);
+      font-weight:700;
+      letter-spacing:-.04em;
+      margin-bottom:14px;
+      line-height:1.15;
+      background:linear-gradient(120deg, var(--a1), var(--a2) 50%, var(--a3));
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+      filter:drop-shadow(0 0 30px rgba(79,141,255,0.25));
+    }
+    .card-sub{
+      color:var(--muted);
+      font-size:clamp(14px,2vw,17px);
+      line-height:1.7;
+      max-width:520px;
+      margin:0 auto 36px;
+    }
+    .card-sub strong{color:var(--a3)}
+
+    /* Notify form */
+    .notify-form{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-bottom:28px;
+      width:100%;
+      max-width:500px;
+    }
+    .notify-input{
+      flex:1;
+      min-width:200px;
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--border-hi);
+      border-radius:50px;
+      padding:12px 20px;
+      color:var(--ink);
+      font-family:var(--font-head);
+      font-size:14px;
+      outline:none;
+      transition:border-color .3s,background .3s;
+    }
+    .notify-input:focus{border-color:var(--a1);background:rgba(79,141,255,.06)}
+    .notify-input::placeholder{color:var(--muted)}
+    
+    .notify-btn{
+      padding:12px 24px;
+      background:linear-gradient(135deg,var(--a1),var(--a2));
+      color:#fff;
+      border:0;
+      border-radius:50px;
+      font-family:var(--font-head);
+      font-size:14px;
+      font-weight:600;
+      cursor:pointer;
+      white-space:nowrap;
+      transition:transform .3s var(--ease),box-shadow .3s;
+    }
+    .notify-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(79,141,255,.35)}
+    .notify-note{font-size:13.5px;color:var(--a3);display:none;margin-top:8px;line-height:1.6;max-width:500px}
+    .notify-note.show{display:block}
+
+    /* Divider */
+    .card-or{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px;width:100%;max-width:400px}
+    .card-or::before,.card-or::after{content:"";flex:1;height:1px;background:var(--border)}
+
+    /* Actions */
+    .card-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-family:var(--font-head);font-size:14px;font-weight:600;cursor:pointer;border:0;transition:transform .35s var(--ease),box-shadow .35s;text-decoration:none}
+    .btn-outline{background:transparent;color:var(--ink);border:1px solid var(--border-hi)}
+    .btn-outline:hover{border-color:var(--ink);transform:translateY(-2px)}
+    .btn-primary{background:var(--ink);color:#050810}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,255,255,.12)}
+
+    /* Footer */
+    .foot{position:relative;z-index:2;text-align:center;padding:24px 16px 32px;font-size:12px;color:var(--muted);width:100%;margin-top:auto}
+
+    @media(max-width:760px){
+      .nav-links{position:fixed;inset:0;background:rgba(2,4,8,.97);backdrop-filter:blur(20px);flex-direction:column;justify-content:center;gap:28px;transform:translateY(-100%);transition:transform .5s var(--ease);z-index:80}
+      .nav-links.open{transform:none}
+      .nav-links a{font-size:22px}
+      .burger{display:flex}
+    }
+    @media(max-width:500px){.container{padding:120px 16px 60px}}
+  </style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div class="grain"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <nav id="mainNav">
+    <a href="index.html" class="nav-logo hover-mag">
+      <span class="dot-live"></span>Ahmed.
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#about">About</a>
+      <a href="index.html#expertise">Expertise</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html" class="nav-active">Resume</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact" class="nav-cta">Let's Talk</a>
+    </div>
+    <!-- GitHub + LinkedIn + Hashnode icons top-right -->
+    <div class="nav-socials">
+      <a href="https://github.com/a7med-Talaat" target="_blank" rel="noopener" class="nav-social" title="GitHub">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/ahmed-talaat-at" target="_blank" rel="noopener" class="nav-social" title="LinkedIn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.36 4.26 5.44v6.3zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM3.57 20.45h3.55V9H3.57v11.45zM22.22 0H1.77C.8 0 0 .77 0 1.73v20.54C0 23.23.8 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="https://hashnode.com/@a7medtal3at" target="_blank" rel="noopener" class="nav-social" title="Hashnode">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="m22.351 8.019-6.37-6.37a5.63 5.63 0 0 0-7.962 0l-6.37 6.37a5.63 5.63 0 0 0 0 7.962l6.37 6.37a5.63 5.63 0 0 0 7.962 0l6.37-6.37a5.63 5.63 0 0 0 0-7.962zM12 15.953a3.953 3.953 0 1 1 0-7.906 3.953 3.953 0 0 1 0 7.906z"/></svg>
+      </a>
+    </div>
+    <button class="burger" id="burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <!-- Terminal (404 Page Style) -->
+  <div class="terminal">
+    <div class="term-bar">
+      <div class="td td-r"></div>
+      <div class="td td-y"></div>
+      <div class="td td-g"></div>
+      <div class="term-title">bash — ahmed-portfolio</div>
+    </div>
+    <div class="term-body">
+      <div class="term-line"><span class="term-prompt">$</span><span class="term-cmd">curl -X GET <span style="color:var(--a1)">https://ahmedtalaat.dev</span>/resume.pdf</span></div>
+      <div class="term-line"><span class="term-prompt">›</span><span class="term-err">ERROR: File not uploaded yet (pending_upload)</span></div>
+      <div class="term-line"><span class="term-prompt">›</span><span class="term-warn">Status: I'm currently polishing the final layout.</span></div>
+      <div class="term-line"><span class="term-prompt">›</span><span class="term-ok">Recommendation: Connect on LinkedIn or request notification.</span></div>
+      <div class="term-line"><span class="term-prompt">$</span><span class="term-cmd">notify-me --email=<span class="cursor-blink"></span></span></div>
+    </div>
+  </div>
+
+  <!-- Glowing 404 number -->
+  <div class="error-num">404</div>
+
+  <h1 class="card-title">Resume isn't live just yet.</h1>
+  <p class="card-sub">
+    I'm polishing the final version of my resume. It'll be uploaded here <strong>very soon</strong>. Drop your email below and I'll notify you the moment it's available — or just reach out directly.
+  </p>
+
+  <!-- Notify me form -->
+  <div class="notify-form">
+    <input class="notify-input" id="notifyEmail" type="email" placeholder="your@email.com" />
+    <button class="notify-btn" id="notifyBtn">Notify me 🔔</button>
+  </div>
+  <div class="notify-note" id="notifyNote"></div>
+
+  <div class="card-or">or</div>
+
+  <div class="card-actions">
+    <a href="https://linkedin.com/in/ahmed-talaat-at" target="_blank" rel="noopener" class="btn btn-primary">View LinkedIn Profile ↗</a>
+    <a href="index.html#contact" class="btn btn-outline">Contact me directly</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="foot">
+  © <span id="yr"></span> Ahmed Talaat — Data Scientist & AI Engineer
+</footer>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* Canvas particle system */
+  var canvas=document.getElementById('bg-canvas');
+  if(canvas){
+    var ctx=canvas.getContext('2d',{alpha:false});
+    var W,H,particles=[];
+    var mouse={x:-1000,y:-1000};
+    function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+    window.addEventListener('resize',resize,{passive:true}); resize();
+    window.addEventListener('mousemove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;},{passive:true});
+    var count=Math.min(Math.floor(W/16),80);
+    for(var i=0;i<count;i++) particles.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.15,vy:(Math.random()-.5)*.15,r:Math.random()*1.3+.4});
+    function draw(){
+      ctx.fillStyle='#020408'; ctx.fillRect(0,0,W,H);
+      for(var i=0;i<particles.length;i++){
+        var p=particles[i]; p.x+=p.vx; p.y+=p.vy;
+        if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1;
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle='rgba(100,130,170,.28)'; ctx.fill();
+        for(var j=i+1;j<particles.length;j++){
+          var q=particles[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+          if(d<130){ ctx.beginPath(); ctx.strokeStyle='rgba(79,141,255,'+(0.1*(1-d/130))+')'; ctx.lineWidth=.5; ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke(); }
+        }
+        var mdx=p.x-mouse.x,mdy=p.y-mouse.y,md=Math.sqrt(mdx*mdx+mdy*mdy);
+        if(md<180){ ctx.beginPath(); ctx.strokeStyle='rgba(6,214,160,'+(1-md/180)*.28+')'; ctx.lineWidth=1; ctx.moveTo(p.x,p.y); ctx.lineTo(mouse.x,mouse.y); ctx.stroke(); p.x-=mdx*.004; p.y-=mdy*.004; }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+
+  /* Notify me Gmail drafts dispatcher */
+  var notifyBtn=document.getElementById('notifyBtn');
+  var notifyNote=document.getElementById('notifyNote');
+  if(notifyBtn){
+    notifyBtn.addEventListener('click',function(){
+      var emailEl=document.getElementById('notifyEmail');
+      var email=emailEl.value.trim();
+      if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        emailEl.style.borderColor='#ff5f5f';
+        setTimeout(function(){ emailEl.style.borderColor=''; },2000);
+        return;
+      }
+      /* Open Gmail to send notification request to Ahmed */
+      var subject='Resume notification request';
+      var body='Hi Ahmed,\n\nPlease notify me when your resume is uploaded.\n\nMy email: '+email+'\n\nThanks!';
+      var gmailUrl='https://mail.google.com/mail/?view=cm&fs=1&to=ahmedtalaatsalah05@gmail.com&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+      window.open(gmailUrl,'_blank');
+      notifyNote.innerHTML="✉️ Opening Gmail draft... Send the pre-filled email to alert Ahmed. We'll make sure you're notified at <strong>"+email+"</strong> the moment the resume is live!";
+      notifyNote.classList.add('show');
+      emailEl.value='';
+    });
+  }
+
+  /* Mobile nav menu toggler */
+  var burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
+  if(burger&&navLinks){
+    burger.addEventListener('click',function(){burger.classList.toggle('x');navLinks.classList.toggle('open');});
+    navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){burger.classList.remove('x');navLinks.classList.remove('open');});});
+  }
+})();
+</script>
+</body>
+</html>
