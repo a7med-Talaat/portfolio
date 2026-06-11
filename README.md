@@ -8,9 +8,8 @@ A premium, high-performance, and responsive single-page developer portfolio desi
 
 This release brings design updates, math rendering corrections, and tag cleanup:
 
-- **Redesigned Resume Page (`resume.html`)**: Styled the page to match the premium dark terminal, glowing background orbs, and node-link particle physics of `404.html`. The floating file SVG has been replaced by the giant glowing **404** text block, while preserving all current page features (e.g., pre-filled Gmail notification draftsman, LinkedIn button, and home navigation).
-- **Corrected Arabic Blog Math Equations (`How-AI-Understands-Your-Messages.html`)**: Resolved multiple LaTeX parsing issues, line-break splits, and character-escaping corruptions within the Arabic translation block of the first blog. All math expressions (GELU, Positional Encoding, Self-Attention, and SwiGLU) now render flawlessly LTR with zero KaTeX compile warnings.
-- **Tag Cleanup**: Removed the tag `"Under the Hood"` (and Arabic equivalent `"تحت الغطا"`) from the tags markup on the blog post pages and from the main blogs grid tags metadata inside `blogs.html`.
+- **Redesigned Resume Page (`resume.html`)**
+- **added the hashnode section in the portfolio **
 
 ---
 
