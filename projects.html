@@ -137,6 +137,8 @@
     .dot-nlp { background: var(--a2); }
     .dot-space { background: var(--a3); }
     .dot-featured { background: #ffbe2e; }
+    .dot-healthcare { background: #f472b6; }
+    .dot-scraping { background: #fb923c; }
 
     /* Active filter states with color matches and glowing drop shadows */
     .f-btn.active {
@@ -166,6 +168,16 @@
       background: rgba(255, 190, 46, 0.12);
       border-color: rgba(255, 190, 46, 0.4);
       box-shadow: 0 4px 15px rgba(255, 190, 46, 0.15);
+    }
+    .f-btn.active[data-filter="healthcare"] {
+      background: rgba(244, 114, 182, 0.12);
+      border-color: rgba(244, 114, 182, 0.4);
+      box-shadow: 0 4px 15px rgba(244, 114, 182, 0.15);
+    }
+    .f-btn.active[data-filter="scraping"] {
+      background: rgba(251, 146, 60, 0.12);
+      border-color: rgba(251, 146, 60, 0.4);
+      box-shadow: 0 4px 15px rgba(251, 146, 60, 0.15);
     }
     .f-btn.active .dot {
       transform: scale(1.3);
@@ -309,16 +321,18 @@
 
   <!-- Stats -->
   <div class="stats-row reveal" style="transition-delay:.08s">
-    <div class="sr-stat"><div class="v">3</div><div class="l">Projects shipped</div></div>
+    <div class="sr-stat"><div class="v">5</div><div class="l">Projects shipped</div></div>
     <div class="sr-stat"><div class="v">NASA</div><div class="l">Challenge solved</div></div>
     <div class="sr-stat"><div class="v">40+</div><div class="l">Tools used</div></div>
-    <div class="sr-stat"><div class="v">3</div><div class="l">ML domains covered</div></div>
+    <div class="sr-stat"><div class="v">5</div><div class="l">ML domains covered</div></div>
   </div>
 
   <!-- FILTER TABS -->
   <div class="filter-row reveal" style="transition-delay:.12s" id="filterRow">
     <button class="f-btn active" data-filter="all"><span class="dot dot-all"></span>All Projects</button>
     <button class="f-btn" data-filter="ml"><span class="dot dot-ml"></span>Machine Learning</button>
+    <button class="f-btn" data-filter="healthcare"><span class="dot dot-healthcare"></span>Healthcare AI</button>
+    <button class="f-btn" data-filter="scraping"><span class="dot dot-scraping"></span>Web Scraping</button>
     <button class="f-btn" data-filter="nlp"><span class="dot dot-nlp"></span>NLP</button>
     <button class="f-btn" data-filter="space"><span class="dot dot-space"></span>Space &amp; AI</button>
     <button class="f-btn" data-filter="featured"><span class="dot dot-featured"></span>Featured</button>
@@ -341,7 +355,12 @@
           <span>Pandas</span><span>SHAP</span><span>K-Means</span>
           <span>Scikit-learn</span><span>Matplotlib</span>
         </div>
-        <div class="proj-link">View on GitHub ↗</div>
+        <div class="proj-link" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-top:none;padding-top:0">
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:30px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);transition:border-color .3s,color .3s" onmouseover="this.style.color='#eef2ff';this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='rgba(255,255,255,.12)'">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub ↗
+          </span>
+        </div>
       </div>
     </a>
 
@@ -359,15 +378,67 @@
           <span>AWS</span><span>OpenCV</span><span>NumPy</span>
           <span>Pandas</span><span>NASA APIs</span>
         </div>
-        <div class="proj-link">View on GitHub ↗</div>
+        <div class="proj-link" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-top:none;padding-top:0">
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:30px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);transition:border-color .3s,color .3s" onmouseover="this.style.color='#eef2ff';this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='rgba(255,255,255,.12)'">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub ↗
+          </span>
+        </div>
       </div>
     </a>
 
     <!-- 03 -->
-    <a href="https://github.com/a7med-Talaat/movie-review-sentiment-analysis" target="_blank" rel="noopener"
-       class="proj reveal" data-tags="nlp ml" id="p3" style="transition-delay:.12s">
+    <a href="https://synapsemed.streamlit.app/" target="_blank" rel="noopener"
+       class="proj reveal" data-tags="ml healthcare featured" id="p3" style="transition-delay:.12s">
       <div class="glow"></div>
       <div class="proj-num">03</div>
+      <div class="proj-body">
+        <div class="proj-badge">Healthcare AI · ML Dashboard · Featured</div>
+        <h3>SynapseMed — Clinical Diagnostic AI</h3>
+        <p>Advanced, interactive machine learning diagnostic dashboard with fully segregated Patient &amp; Doctor portals. The Patient portal predicts 48 diseases with 99.5% accuracy from symptom selection, includes an ADA-compliant diabetes agent with offline PDF table parsing and image OCR, a non-invasive Type 2 risk questionnaire, and a bilingual English/Arabic UI. The restricted Doctor portal unlocks live clinic statistics, a patient database with notes/prescription editing, dataset explorer, and searchable diagnostic history logs with one-click Excel export.</p>
+        <div class="tech-tags">
+          <span>Python</span><span>Streamlit</span><span>Scikit-learn</span>
+          <span>Pandas</span><span>pdfplumber</span><span>Tesseract OCR</span>
+          <span>SQLite</span><span>openpyxl</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--border)">
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:30px;background:rgba(79,141,255,.12);border:1px solid rgba(79,141,255,.3);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#4f8dff">🔴 Live Demo ↗</span>
+          <span onclick="window.open('https://github.com/a7med-Talaat/SynapseMed','_blank');event.stopPropagation()" style="display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:30px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:border-color .3s,color .3s" onmouseover="this.style.color='#eef2ff';this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='rgba(255,255,255,.12)'">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub ↗
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 04 -->
+    <a href="https://github.com/a7med-Talaat/Amazon-Data-Scraper" target="_blank" rel="noopener"
+       class="proj reveal" data-tags="scraping ml" id="p4" style="transition-delay:.18s">
+      <div class="glow"></div>
+      <div class="proj-num">04</div>
+      <div class="proj-body">
+        <div class="proj-badge">Web Scraping · Data Engineering · Analytics</div>
+        <h3>Amazon Data Scraper &amp; Analytics Pipeline</h3>
+        <p>Resilient, testable end-to-end web scraping pipeline for Amazon search results and product pages — built with the scrapling framework which uses curl_cffi browser-fingerprint impersonation and randomised headers to bypass Amazon's aggressive bot detection. The parser is fully decoupled from networking (zero network code in parser.py), making it independently unit-tested against saved HTML fixtures. All scraped data is stored via SQLite upsert logic, exported to CSV, and fed into a Pandas analytics engine that generates price histograms, ratings scatter plots, and top-reviewed product charts via Matplotlib.</p>
+        <div class="tech-tags">
+          <span>Python</span><span>scrapling</span><span>curl_cffi</span>
+          <span>SQLite</span><span>Pandas</span><span>Matplotlib</span>
+          <span>Streamlit</span><span>argparse</span>
+        </div>
+        <div class="proj-link" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-top:none;padding-top:0">
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:30px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);transition:border-color .3s,color .3s" onmouseover="this.style.color='#eef2ff';this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='rgba(255,255,255,.12)'">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub ↗
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 05 -->
+    <a href="https://github.com/a7med-Talaat/movie-review-sentiment-analysis" target="_blank" rel="noopener"
+       class="proj reveal" data-tags="nlp ml" id="p5" style="transition-delay:.24s">
+      <div class="glow"></div>
+      <div class="proj-num">05</div>
       <div class="proj-body">
         <div class="proj-badge">NLP · Deep Learning · Text Analytics</div>
         <h3>Movie Review Sentiment Analysis</h3>
@@ -377,10 +448,14 @@
           <span>NLTK</span><span>TF-IDF</span><span>Deep Learning</span>
           <span>LSTM</span><span>FastAPI</span>
         </div>
-        <div class="proj-link">View on GitHub ↗</div>
+        <div class="proj-link" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-top:none;padding-top:0">
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:30px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);transition:border-color .3s,color .3s" onmouseover="this.style.color='#eef2ff';this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='rgba(255,255,255,.12)'">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub ↗
+          </span>
+        </div>
       </div>
     </a>
-
   </div>
 
   <div class="back-wrap reveal" style="transition-delay:.2s">
